@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VeterinaryClinic", "VeterinaryClinic\VeterinaryClinic.csproj", "{98A7AFC8-E4AF-40DA-BA64-74FF4A8E369B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VeterinaryClinic", "VeterinaryClinic\VeterinaryClinic.csproj", "{98A7AFC8-E4AF-40DA-BA64-74FF4A8E369B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VeterinaryClinic.Data", "VeterinaryClinic.Data\VeterinaryClinic.Data.csproj", "{CD5CCE12-A632-415E-926E-9C10B5AF2973}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{98A7AFC8-E4AF-40DA-BA64-74FF4A8E369B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{98A7AFC8-E4AF-40DA-BA64-74FF4A8E369B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{98A7AFC8-E4AF-40DA-BA64-74FF4A8E369B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD5CCE12-A632-415E-926E-9C10B5AF2973}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD5CCE12-A632-415E-926E-9C10B5AF2973}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD5CCE12-A632-415E-926E-9C10B5AF2973}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD5CCE12-A632-415E-926E-9C10B5AF2973}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

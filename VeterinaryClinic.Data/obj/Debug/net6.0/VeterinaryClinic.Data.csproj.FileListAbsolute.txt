@@ -1,0 +1,14 @@
+C:\Users\gorst\source\repos\ThirdCourse\VeterinaryClinic\VeterinaryClinic.Data\bin\Debug\net6.0\VeterinaryClinic.Data.deps.json
+C:\Users\gorst\source\repos\ThirdCourse\VeterinaryClinic\VeterinaryClinic.Data\bin\Debug\net6.0\VeterinaryClinic.Data.runtimeconfig.json
+C:\Users\gorst\source\repos\ThirdCourse\VeterinaryClinic\VeterinaryClinic.Data\bin\Debug\net6.0\VeterinaryClinic.Data.dll
+C:\Users\gorst\source\repos\ThirdCourse\VeterinaryClinic\VeterinaryClinic.Data\bin\Debug\net6.0\ref\VeterinaryClinic.Data.dll
+C:\Users\gorst\source\repos\ThirdCourse\VeterinaryClinic\VeterinaryClinic.Data\bin\Debug\net6.0\VeterinaryClinic.Data.pdb
+C:\Users\gorst\source\repos\ThirdCourse\VeterinaryClinic\VeterinaryClinic.Data\obj\Debug\net6.0\VeterinaryClinic.Data.csproj.AssemblyReference.cache
+C:\Users\gorst\source\repos\ThirdCourse\VeterinaryClinic\VeterinaryClinic.Data\obj\Debug\net6.0\VeterinaryClinic.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gorst\source\repos\ThirdCourse\VeterinaryClinic\VeterinaryClinic.Data\obj\Debug\net6.0\VeterinaryClinic.Data.AssemblyInfoInputs.cache
+C:\Users\gorst\source\repos\ThirdCourse\VeterinaryClinic\VeterinaryClinic.Data\obj\Debug\net6.0\VeterinaryClinic.Data.AssemblyInfo.cs
+C:\Users\gorst\source\repos\ThirdCourse\VeterinaryClinic\VeterinaryClinic.Data\obj\Debug\net6.0\VeterinaryClinic.Data.csproj.CoreCompileInputs.cache
+C:\Users\gorst\source\repos\ThirdCourse\VeterinaryClinic\VeterinaryClinic.Data\obj\Debug\net6.0\VeterinaryClinic.Data.dll
+C:\Users\gorst\source\repos\ThirdCourse\VeterinaryClinic\VeterinaryClinic.Data\obj\Debug\net6.0\ref\VeterinaryClinic.Data.dll
+C:\Users\gorst\source\repos\ThirdCourse\VeterinaryClinic\VeterinaryClinic.Data\obj\Debug\net6.0\VeterinaryClinic.Data.pdb
+C:\Users\gorst\source\repos\ThirdCourse\VeterinaryClinic\VeterinaryClinic.Data\obj\Debug\net6.0\VeterinaryClinic.Data.genruntimeconfig.cache

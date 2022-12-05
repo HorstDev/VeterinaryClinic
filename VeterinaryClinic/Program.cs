@@ -1,7 +1,14 @@
+using Microsoft.EntityFrameworkCore;
+using VeterinaryClinic.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDbContext<ClinicDataContext>(
+    o => o.UseNpgsql(builder.Configuration.GetConnectionString("VetClinicDb"))
+    );
 
 var app = builder.Build();
 
