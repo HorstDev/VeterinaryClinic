@@ -5,7 +5,12 @@
       "ProjectGuid": "98a7afc8-e4af-40da-ba64-74ff4a8e369b",
       "DisplayName": "VeterinaryClinic",
       "ColorIndex": 0
+    },
+    "cd5cce12-a632-415e-926e-9c10b5af2973": {
+      "ProjectGuid": "cd5cce12-a632-415e-926e-9c10b5af2973",
+      "DisplayName": "VeterinaryClinic.Data",
+      "ColorIndex": 1
     }
   },
-  "NextColorIndex": 1
+  "NextColorIndex": 2
 }
