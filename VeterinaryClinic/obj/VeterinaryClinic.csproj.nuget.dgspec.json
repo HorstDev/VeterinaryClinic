@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\gorst\\source\\repos\\ThirdCourse\\VeterinaryClinic\\VeterinaryClinic\\VeterinaryClinic.csproj": {}
+    "C:\\Users\\gorst\\source\\repos\\ThirdCourse\\VeterinaryClinic old\\VeterinaryClinic\\VeterinaryClinic.csproj": {}
   },
   "projects": {
-    "C:\\Users\\gorst\\source\\repos\\ThirdCourse\\VeterinaryClinic\\VeterinaryClinic.Data\\VeterinaryClinic.Data.csproj": {
+    "C:\\Users\\gorst\\source\\repos\\ThirdCourse\\VeterinaryClinic old\\VeterinaryClinic.Data\\VeterinaryClinic.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\gorst\\source\\repos\\ThirdCourse\\VeterinaryClinic\\VeterinaryClinic.Data\\VeterinaryClinic.Data.csproj",
+        "projectUniqueName": "C:\\Users\\gorst\\source\\repos\\ThirdCourse\\VeterinaryClinic old\\VeterinaryClinic.Data\\VeterinaryClinic.Data.csproj",
         "projectName": "VeterinaryClinic.Data",
-        "projectPath": "C:\\Users\\gorst\\source\\repos\\ThirdCourse\\VeterinaryClinic\\VeterinaryClinic.Data\\VeterinaryClinic.Data.csproj",
+        "projectPath": "C:\\Users\\gorst\\source\\repos\\ThirdCourse\\VeterinaryClinic old\\VeterinaryClinic.Data\\VeterinaryClinic.Data.csproj",
         "packagesPath": "C:\\Users\\gorst\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\gorst\\source\\repos\\ThirdCourse\\VeterinaryClinic\\VeterinaryClinic.Data\\obj\\",
+        "outputPath": "C:\\Users\\gorst\\source\\repos\\ThirdCourse\\VeterinaryClinic old\\VeterinaryClinic.Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\gorst\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -67,18 +67,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.404\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\gorst\\source\\repos\\ThirdCourse\\VeterinaryClinic\\VeterinaryClinic\\VeterinaryClinic.csproj": {
+    "C:\\Users\\gorst\\source\\repos\\ThirdCourse\\VeterinaryClinic old\\VeterinaryClinic\\VeterinaryClinic.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\gorst\\source\\repos\\ThirdCourse\\VeterinaryClinic\\VeterinaryClinic\\VeterinaryClinic.csproj",
+        "projectUniqueName": "C:\\Users\\gorst\\source\\repos\\ThirdCourse\\VeterinaryClinic old\\VeterinaryClinic\\VeterinaryClinic.csproj",
         "projectName": "VeterinaryClinic",
-        "projectPath": "C:\\Users\\gorst\\source\\repos\\ThirdCourse\\VeterinaryClinic\\VeterinaryClinic\\VeterinaryClinic.csproj",
+        "projectPath": "C:\\Users\\gorst\\source\\repos\\ThirdCourse\\VeterinaryClinic old\\VeterinaryClinic\\VeterinaryClinic.csproj",
         "packagesPath": "C:\\Users\\gorst\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\gorst\\source\\repos\\ThirdCourse\\VeterinaryClinic\\VeterinaryClinic\\obj\\",
+        "outputPath": "C:\\Users\\gorst\\source\\repos\\ThirdCourse\\VeterinaryClinic old\\VeterinaryClinic\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\gorst\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -95,8 +95,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\gorst\\source\\repos\\ThirdCourse\\VeterinaryClinic\\VeterinaryClinic.Data\\VeterinaryClinic.Data.csproj": {
-                "projectPath": "C:\\Users\\gorst\\source\\repos\\ThirdCourse\\VeterinaryClinic\\VeterinaryClinic.Data\\VeterinaryClinic.Data.csproj"
+              "C:\\Users\\gorst\\source\\repos\\ThirdCourse\\VeterinaryClinic old\\VeterinaryClinic.Data\\VeterinaryClinic.Data.csproj": {
+                "projectPath": "C:\\Users\\gorst\\source\\repos\\ThirdCourse\\VeterinaryClinic old\\VeterinaryClinic.Data\\VeterinaryClinic.Data.csproj"
               }
             }
           }
@@ -145,7 +145,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.404\\RuntimeIdentifierGraph.json"
         }
       }
     }

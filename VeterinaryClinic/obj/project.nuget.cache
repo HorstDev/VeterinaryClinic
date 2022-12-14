@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "BX2xZxu9hzH4AV8j+q6aTuOJmKTT+nrE3oYBNSzmx9/uFp2NP96772iuJpiNlvAA4gLAOJIXcXVve5NSyVUlEA==",
+  "dgSpecHash": "2lOpMhftHr5tvpqvLD3sL+eZfFnHSC5DFnzwn5zfeBY39+6fCooewTsRopd/pXG3BpHWD+b1KW4NcE/Bh/g+2Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\gorst\\source\\repos\\ThirdCourse\\VeterinaryClinic\\VeterinaryClinic\\VeterinaryClinic.csproj",
+  "projectFilePath": "C:\\Users\\gorst\\source\\repos\\ThirdCourse\\VeterinaryClinic old\\VeterinaryClinic\\VeterinaryClinic.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\gorst\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\gorst\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
