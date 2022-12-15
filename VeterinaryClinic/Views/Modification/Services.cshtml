@@ -1,0 +1,59 @@
+﻿@using VeterinaryClinic.Data.Entities
+@model Service
+@{
+    ViewData["Title"] = "Services";
+}
+
+<header>
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Модификация: </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                     <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" asp-area="" asp-controller="Modification" asp-action="Services">Услуги</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active">Питомцы</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active">Хозяева</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+</header>
+<div class="text-center">
+    <h1>Добавление услуг</h1>
+</div>
+<div class="container">
+    <form asp-action="AddService" asp-controller="Modification" method="post">
+        <h1>Название услуги</h1>
+        <input type="name" asp-for="Name" class="form-control" id="UslugaName">
+        <h1>Краткое описание</h1>
+        <input type="name" asp-for="ShortDescription" class="form-control" id="ShortDesc">
+        <h1>Длинное описание</h1>
+        <input type="name" asp-for="LongDescription" class="form-control" id="LongDesc">
+        <h1>Цена</h1>
+        <input type="name" asp-for="Price" class="form-control" id="Price">
+        <br />
+        <button type="submit" class="btn btn-primary">Добавить услугу</button>
+    </form>
+</div>
+
+<div class="text-center">
+    <h1>Удаление услуг</h1>
+</div>
+<div class="container">
+    <form asp-action="RemoveService" asp-controller="Modification" method="post">
+        <h1>Название услуги</h1>
+        <input type="name" asp-for="Name" class="form-control" id="UslugaName">
+        <br />
+        <button type="submit" class="btn btn-primary">Удалить услугу</button>
+    </form>
+</div>
+

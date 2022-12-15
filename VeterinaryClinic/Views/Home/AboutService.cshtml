@@ -1,0 +1,40 @@
+﻿@using System.Security.Claims
+@using VeterinaryClinic.Data.Entities
+@model Service
+@{
+    ViewData["Title"] = "AboutService";
+}
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.104.2">
+   
+    <!-- Custom styles for this template -->
+    <link href="~/css/more.css" rel="stylesheet">
+</head>
+
+<div class="container mt-3">
+     <div class="page-header">
+        <h1>@Model.Name</h1>
+     </div>
+     <div class="row service_group">
+         <div class="col-md-8">
+            <p>@Model.LongDescription</p>
+         </div>
+         <div class="col-md-4 col-lg-3 col-lg-offset-1 price_block">
+                <p>Ориентировочная стоимость - @Model.Price р., подробнее уточняйте по тел. (8512) 72-27-41 (сот).</p>
+            <a class="btn btn-primary mt-3" >Записаться на прием</a>
+         </div>
+     </div>
+     
+</div>
+
+    @*<div class="container">
+        <h1>@Model.Name</h1>
+        <p>@Model.LongDescription</p>
+        <p>Ориентировочная стоимость - @Model.Price рублей, подробнее уточняйте по телефону: 8(800)555-35-35</p>
+    </div>*@
+

@@ -8,16 +8,20 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 using System.Security.Claims;
+using VeterinaryClinic.Data.Repositories;
+using VeterinaryClinic.Data.Interfaces;
 
 namespace VeterinaryClinic.Controllers
 {
     public class AccountController : Controller
     {
-        private ClinicDataContext _db;
+        private readonly IBaseRepository<User> _userRepository;
+        private readonly IBaseRepository<Role> _roleRepository;
 
-        public AccountController(ClinicDataContext context)
+        public AccountController(IBaseRepository<User> userRepository, IBaseRepository<Role> roleRepository)
         {
-            _db = context;
+            _userRepository = userRepository;
+            _roleRepository = roleRepository;
         }
 
         [HttpGet]
@@ -32,7 +36,7 @@ namespace VeterinaryClinic.Controllers
         {
             if (ModelState.IsValid)
             {
-                User user = (await _db.Users
+                User user = (await _userRepository.GetAll()
                     .Include(u => u.Role)
                     .FirstOrDefaultAsync(u => u.Email == model.Email && u.Password == model.Password))!;
 
@@ -59,18 +63,17 @@ namespace VeterinaryClinic.Controllers
         {
             if (ModelState.IsValid)
             {
-                User user = (await _db.Users.FirstOrDefaultAsync(u => u.Email == model.Email))!;
+                User user = (await _userRepository.GetAll().FirstOrDefaultAsync(u => u.Email == model.Email))!;
                 if (user == null)
                 {
                     // Присваиваем роль
                     user = new User { Email = model.Email, Password = model.Password };
-                    Role userRole = (await _db.Roles.FirstOrDefaultAsync(r => r.Name == "PetOwner"))!;
+                    Role userRole = (await _roleRepository.GetAll().FirstOrDefaultAsync(r => r.Name == "PetOwner"))!;
                     if (userRole != null)
                         user.Role = userRole;
 
                     //Добавляем в БД
-                    _db.Users.Add(user);
-                    await _db.SaveChangesAsync();
+                    await _userRepository.Create(user);
 
                     await Authenticate(user); // аутентификация
 
@@ -98,10 +101,11 @@ namespace VeterinaryClinic.Controllers
             await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(id));
         }
 
+        [Authorize]
         public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-            return RedirectToAction("Login", "Account");
+            return RedirectToAction("General", "Home");
         }
     }
 }

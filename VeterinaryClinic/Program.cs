@@ -1,10 +1,17 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using VeterinaryClinic.Data;
+using VeterinaryClinic.Data.Entities;
+using VeterinaryClinic.Data.Interfaces;
+using VeterinaryClinic.Data.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddTransient<IBaseRepository<User>, UserRepository>();
+builder.Services.AddTransient<IBaseRepository<Role>, RoleRepository>();
+builder.Services.AddTransient<IBaseRepository<Service>, ServiceRepository>();
+
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<ClinicDataContext>(

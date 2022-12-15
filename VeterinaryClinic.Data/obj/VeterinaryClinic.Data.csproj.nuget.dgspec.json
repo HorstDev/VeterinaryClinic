@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\gorst\\source\\repos\\ThirdCourse\\VeterinaryClinic old\\VeterinaryClinic.Data\\VeterinaryClinic.Data.csproj": {}
+    "C:\\Users\\gorst\\source\\repos\\ThirdCourse\\VeterinaryClinic\\VeterinaryClinic.Data\\VeterinaryClinic.Data.csproj": {}
   },
   "projects": {
-    "C:\\Users\\gorst\\source\\repos\\ThirdCourse\\VeterinaryClinic old\\VeterinaryClinic.Data\\VeterinaryClinic.Data.csproj": {
+    "C:\\Users\\gorst\\source\\repos\\ThirdCourse\\VeterinaryClinic\\VeterinaryClinic.Data\\VeterinaryClinic.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\gorst\\source\\repos\\ThirdCourse\\VeterinaryClinic old\\VeterinaryClinic.Data\\VeterinaryClinic.Data.csproj",
+        "projectUniqueName": "C:\\Users\\gorst\\source\\repos\\ThirdCourse\\VeterinaryClinic\\VeterinaryClinic.Data\\VeterinaryClinic.Data.csproj",
         "projectName": "VeterinaryClinic.Data",
-        "projectPath": "C:\\Users\\gorst\\source\\repos\\ThirdCourse\\VeterinaryClinic old\\VeterinaryClinic.Data\\VeterinaryClinic.Data.csproj",
+        "projectPath": "C:\\Users\\gorst\\source\\repos\\ThirdCourse\\VeterinaryClinic\\VeterinaryClinic.Data\\VeterinaryClinic.Data.csproj",
         "packagesPath": "C:\\Users\\gorst\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\gorst\\source\\repos\\ThirdCourse\\VeterinaryClinic old\\VeterinaryClinic.Data\\obj\\",
+        "outputPath": "C:\\Users\\gorst\\source\\repos\\ThirdCourse\\VeterinaryClinic\\VeterinaryClinic.Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\gorst\\AppData\\Roaming\\NuGet\\NuGet.Config",

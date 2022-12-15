@@ -1,0 +1,9 @@
+﻿@using VeterinaryClinic.Data.Entities
+@model Service
+
+<div class="col-lg-4">
+    <h2 class="fw-normal">@Model.Name</h2>
+    <p>@Model.ShortDescription</p>
+    <p><a class="btn btn-primary" asp-controller="Home" asp-action="AboutService" asp-route-id="@Model.Id">Подробнее &raquo;</a></p>
+</div>
+
