@@ -55,8 +55,8 @@
 
       <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
         <li><a href="#" class="nav-link px-2 link-secondary">Когти и Клыки</a></li>
-        <li><a class="nav-link px-2 link-dark" asp-controller="Home" asp-action="Grouming">Услуги</a></li>
-        <li><a href="#" class="nav-link px-2 link-dark">Контакты</a></li>
+        <li><a class="nav-link px-2 link-dark" asp-controller="Service" asp-action="MakeAnAppointment">Запись на прием</a></li>
+        <li><a class="nav-link px-2 link-dark" asp-controller="Home" asp-action="Contacts">Контакты</a></li>
       </ul>
 
       @if(!User.Identity.IsAuthenticated) {
@@ -69,11 +69,11 @@
           <div class="col-md-3 text-end">
               @if(User.FindFirst(x => x.Type == ClaimsIdentity.DefaultRoleClaimType)!.Value == "Admin")
               {
-                  <a class="btn bg-success md-5" asp-controller="Modification" asp-action="Modifications">Модификация сайта</a>
+                  <a class="btn bg-success md-5" asp-controller="Modification" asp-action="Modifications">Админ</a>
               }
               else
               {
-                  <a class="btn bg-success md-5">Мои питомцы</a>
+                  <a class="btn bg-success md-5" asp-controller="Account" asp-action="MyProfile">Личный кабинет</a>
               }
               <a class="btn bg-danger md-5" asp-controller="Account" asp-action="Logout">Выйти</a>
           </div>

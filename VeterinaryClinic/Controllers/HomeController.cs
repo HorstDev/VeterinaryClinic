@@ -28,10 +28,9 @@ namespace VeterinaryClinic.Controllers
         }
 
         [HttpGet]
-        public IActionResult AboutService(int id)
+        public IActionResult Contacts()
         {
-            Service service = _serviceRepository.GetAll().FirstOrDefault(x => x.Id == id)!;
-            return View(service);
+            return View();
         }
 
 

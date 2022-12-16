@@ -16,10 +16,13 @@
                             <a class="nav-link active" asp-area="" asp-controller="Modification" asp-action="Services">Услуги</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active">Питомцы</a>
+                            <a class="nav-link active" asp-area="" asp-controller="Service" asp-action="ApprovalAppointments">Нерассмотренные заявки</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active">Хозяева</a>
+                            <a class="nav-link active" asp-area="" asp-controller="Service" asp-action="ApprovedAppointments">Одобренные заявки</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" asp-area="" asp-controller="Service" asp-action="RejectedAppointments">Отклоненные заявки</a>
                         </li>
                     </ul>
                 </div>

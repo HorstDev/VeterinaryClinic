@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "1XeIsYeDis8jGLa9zDlzkbiSk5DcV5DwqVCwHTz65Qs=",
+  "Hash": "ZAymH4nTcYjFm8PMGboT4FfHkWK2uownLZWtBGtwzsQ=",
   "Source": "VeterinaryClinic",
   "BasePath": "_content/VeterinaryClinic",
   "Mode": "Default",
@@ -49,6 +49,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\gorst\\source\\repos\\ThirdCourse\\VeterinaryClinic\\VeterinaryClinic\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\VeterinaryClinic.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\gorst\\source\\repos\\ThirdCourse\\VeterinaryClinic\\VeterinaryClinic\\wwwroot\\css\\form-validation.css",
+      "SourceId": "VeterinaryClinic",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\gorst\\source\\repos\\ThirdCourse\\VeterinaryClinic\\VeterinaryClinic\\wwwroot\\",
+      "BasePath": "_content/VeterinaryClinic",
+      "RelativePath": "css/form-validation.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\form-validation.css"
     },
     {
       "Identity": "C:\\Users\\gorst\\source\\repos\\ThirdCourse\\VeterinaryClinic\\VeterinaryClinic\\wwwroot\\css\\headers.css",

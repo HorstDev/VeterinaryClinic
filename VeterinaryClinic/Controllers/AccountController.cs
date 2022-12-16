@@ -10,6 +10,7 @@ using System.Diagnostics;
 using System.Security.Claims;
 using VeterinaryClinic.Data.Repositories;
 using VeterinaryClinic.Data.Interfaces;
+using VeterinaryClinic.Data.Entities;
 
 namespace VeterinaryClinic.Controllers
 {
@@ -17,11 +18,13 @@ namespace VeterinaryClinic.Controllers
     {
         private readonly IBaseRepository<User> _userRepository;
         private readonly IBaseRepository<Role> _roleRepository;
+        private readonly IBaseRepository<Appointment> _appointmentRepository;
 
-        public AccountController(IBaseRepository<User> userRepository, IBaseRepository<Role> roleRepository)
+        public AccountController(IBaseRepository<User> userRepository, IBaseRepository<Role> roleRepository, IBaseRepository<Appointment> appointmentRepository)
         {
             _userRepository = userRepository;
             _roleRepository = roleRepository;
+            _appointmentRepository = appointmentRepository;
         }
 
         [HttpGet]
@@ -106,6 +109,13 @@ namespace VeterinaryClinic.Controllers
         {
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
             return RedirectToAction("General", "Home");
+        }
+
+        [Authorize]
+        [HttpGet]
+        public IActionResult MyProfile()
+        {
+            return View();
         }
     }
 }

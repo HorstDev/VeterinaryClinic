@@ -11,6 +11,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddTransient<IBaseRepository<User>, UserRepository>();
 builder.Services.AddTransient<IBaseRepository<Role>, RoleRepository>();
 builder.Services.AddTransient<IBaseRepository<Service>, ServiceRepository>();
+builder.Services.AddTransient<IBaseRepository<Appointment>, AppointmentRepository>();
 
 builder.Services.AddControllersWithViews();
 
@@ -26,6 +27,7 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
                     options.AccessDeniedPath = new Microsoft.AspNetCore.Http.PathString("/Account/Login");
                 });
 
+AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

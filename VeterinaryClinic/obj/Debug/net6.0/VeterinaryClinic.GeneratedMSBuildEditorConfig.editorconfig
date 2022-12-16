@@ -19,20 +19,20 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/gorst/source/repos/ThirdCourse/VeterinaryClinic/VeterinaryClinic/Views/Account/MyProfile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxNeVByb2ZpbGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/gorst/source/repos/ThirdCourse/VeterinaryClinic/VeterinaryClinic/Views/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/gorst/source/repos/ThirdCourse/VeterinaryClinic/VeterinaryClinic/Views/Home/AboutService.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBYm91dFNlcnZpY2UuY3NodG1s
+[C:/Users/gorst/source/repos/ThirdCourse/VeterinaryClinic/VeterinaryClinic/Views/Home/Contacts.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb250YWN0cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/gorst/source/repos/ThirdCourse/VeterinaryClinic/VeterinaryClinic/Views/Home/General.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxHZW5lcmFsLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/gorst/source/repos/ThirdCourse/VeterinaryClinic/VeterinaryClinic/Views/Home/Services.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTZXJ2aWNlcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/gorst/source/repos/ThirdCourse/VeterinaryClinic/VeterinaryClinic/Views/Modification/Modifications.cshtml]
@@ -49,6 +49,34 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/gorst/source/repos/ThirdCourse/VeterinaryClinic/VeterinaryClinic/Views/Pets/AllPets.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGV0c1xBbGxQZXRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gorst/source/repos/ThirdCourse/VeterinaryClinic/VeterinaryClinic/Views/Service/AboutAppointment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZVxBYm91dEFwcG9pbnRtZW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gorst/source/repos/ThirdCourse/VeterinaryClinic/VeterinaryClinic/Views/Service/AboutService.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZVxBYm91dFNlcnZpY2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gorst/source/repos/ThirdCourse/VeterinaryClinic/VeterinaryClinic/Views/Service/ApprovalAppointments.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZVxBcHByb3ZhbEFwcG9pbnRtZW50cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gorst/source/repos/ThirdCourse/VeterinaryClinic/VeterinaryClinic/Views/Service/ApprovedAppointments.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZVxBcHByb3ZlZEFwcG9pbnRtZW50cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gorst/source/repos/ThirdCourse/VeterinaryClinic/VeterinaryClinic/Views/Service/MakeAnAppointment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZVxNYWtlQW5BcHBvaW50bWVudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gorst/source/repos/ThirdCourse/VeterinaryClinic/VeterinaryClinic/Views/Service/RejectedAppointments.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZVxSZWplY3RlZEFwcG9pbnRtZW50cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/gorst/source/repos/ThirdCourse/VeterinaryClinic/VeterinaryClinic/Views/Shared/AllAppointments.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEFsbEFwcG9pbnRtZW50cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/gorst/source/repos/ThirdCourse/VeterinaryClinic/VeterinaryClinic/Views/Shared/AllServices.cshtml]

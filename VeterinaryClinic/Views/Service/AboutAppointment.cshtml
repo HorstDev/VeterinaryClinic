@@ -1,0 +1,57 @@
+﻿@using System.Security.Claims
+@using VeterinaryClinic.Data.Entities
+@model Appointment
+@{
+    ViewData["Title"] = "AboutAppointment";
+}
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.104.2">
+   
+    <!-- Custom styles for this template -->
+    <link href="~/css/more.css" rel="stylesheet">
+</head>
+
+<div class="container mt-3">
+     <div class="page-header">
+        <h1>@Model.TypeOfService</h1>
+     </div>
+     <div class="row service_group">
+         <div class="col-md-8">
+             <h1>Информация о подавшем заявку:</h1>
+             <p>Имя - @Model.Name</p>
+             <p>Фамилия - @Model.Surname</p>
+             <p>Электронная почта - @Model.Email</p>
+             <p>Услуга - @Model.TypeOfService</p>
+             <p>Животное - @Model.TypeOfAnimal</p>
+             <p>Время, на которое произведена запись - @Model.DateTime.ToString()</p>
+             @if (@Model.StatusCode == AppointmentStatus.Approved)
+             {
+                <p>Статус заявки - ОДОБРЕНА</p>
+            }
+            else if (@Model.StatusCode == AppointmentStatus.Rejected)
+            {
+                <p>Статус заявки - ОТКЛОНЕНА</p>
+            }
+            else
+            {
+                <p>Статус заявки - НЕ РАССМОТРЕНА</p>
+            }
+         </div>
+     </div>
+     @if(User.FindFirst(x => x.Type == ClaimsIdentity.DefaultRoleClaimType)!.Value == "Admin")
+    {
+        <div class="row">
+         <div class="col-md-4 col-lg-3 col-lg-offset-1">
+             <a class="btn w-100 btn btn-lg btn-primary" asp-controller="Service" asp-action="ApproveAppointment" asp-route-id="@Model.Id">Одобрить</a>
+         </div>
+         <div class="col-md-4 col-lg-3 col-lg-offset-1">
+             <a class="btn w-100 btn btn-lg btn-primary" asp-controller="Service" asp-action="RejectAppointment" asp-route-id="@Model.Id">Отклонить</a>
+         </div>
+     </div>  
+    } 
+</div>

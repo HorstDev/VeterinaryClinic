@@ -1,0 +1,16 @@
+﻿@using VeterinaryClinic.Data.Entities
+@model IEnumerable<Appointment>
+@{
+    ViewData["Title"] = "RejectedAppointments";
+}
+
+<div class="list-group w-auto container mt-5">
+    <div class="page-header align-content-center">
+        <h1>Отклоненные заявки</h1>
+     </div>
+    @foreach(Appointment appointment in Model)
+    {
+        @Html.Partial("AllAppointments", appointment);
+    }
+</div>
+
