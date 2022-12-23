@@ -4,21 +4,22 @@ using System.Security.Claims;
 using VeterinaryClinic.Data;
 using VeterinaryClinic.Data.Entities;
 using VeterinaryClinic.Data.Interfaces;
-using VeterinaryClinic.ViewModels.Service;
+using VeterinaryClinic.ViewModels;
 
 namespace VeterinaryClinic.Controllers
 {
     public class ServiceController : Controller
     {
         private readonly IBaseRepository<Service> _serviceRepository;
-        private readonly IBaseRepository<User> _userRepository;
         private readonly IBaseRepository<Appointment> _appointmentRepository;
+        private readonly IBaseRepository<Doctor> _doctorRepository;
 
-        public ServiceController(IBaseRepository<Service> serviceRepository, IBaseRepository<User> userRepository, IBaseRepository<Appointment> appointmentRepository)
+
+        public ServiceController(IBaseRepository<Service> serviceRepository, IBaseRepository<Appointment> appointmentRepository, IBaseRepository<Doctor> doctorRepository)
         {
             _serviceRepository = serviceRepository;
-            _userRepository = userRepository;
             _appointmentRepository = appointmentRepository;
+            _doctorRepository = doctorRepository;
         }
 
         [HttpGet]
@@ -28,33 +29,49 @@ namespace VeterinaryClinic.Controllers
             return View(service);
         }
 
-        // Запись на прием
         [HttpGet]
         public IActionResult MakeAnAppointment()
         {
-            return View();
+            AppointmentFormModel model = new AppointmentFormModel()
+                { AppointmentModel = new AppointmentModel() };
+
+            model.Services = _serviceRepository.GetAll().ToList();
+            model.Doctors = _doctorRepository.GetAll().ToList();
+            return View(model);
         }
 
+        // После того, как мы получили врача и дату приема, выполняется этот метод
         [HttpPost]
-        public async Task<IActionResult> MakeAnAppointment(AppointmentModel model)
+        public async Task<IActionResult> MakeAnAppointment(AppointmentFormModel model)
         {
-            Appointment appointment = new Appointment { 
-                Name = model.Name, Surname = model.Surname, TypeOfAnimal = model.TypeOfAnimal,
-                Email = model.Email, TypeOfService = model.TypeOfService, DateTime = model.DateTime, Note = model.Note };
-
-            string? userName = null;
-            if (User.Identity!.IsAuthenticated)
+            // Если все заполнено, отправляем услугу в БД
+            if (model.AppointmentModel.EverythingIsFilledIn())
             {
-                userName = User.FindFirst(x => x.Type == ClaimsIdentity.DefaultNameClaimType)!.Value;
-                appointment.IdUser = _userRepository.GetAll().FirstOrDefault(x => x.Email == userName)!.Id;
+                model.AppointmentModel.DateTime = model.AppointmentModel.Kostilb(model.AppointmentModel.DateTime, model.AppointmentModel.TimeInString!); // - костыль для даты и времени
+                model.AppointmentModel.DateTimeEnd = model.AppointmentModel.DateTime.AddMinutes(_serviceRepository.GetAll().FirstOrDefault
+                    (x => x.Name == model.AppointmentModel.TypeOfService)!.ReceptionTimeMinutes);
+                model.AppointmentModel.Doctor = _doctorRepository.GetAll().FirstOrDefault(x => x.FullName == model.AppointmentModel.Doctor.FullName)!;
+                Appointment appointment = (Appointment)model;
+                await _appointmentRepository.Create(appointment);
+                return RedirectToAction("General", "Home");
             }
-
-            await _appointmentRepository.Create(appointment);
-
-            return RedirectToAction("General", "Home");
+            else
+            {
+                // Подбираем свободные времена
+                model.Times = model.AppointmentModel.AvailableTimes(_serviceRepository, _appointmentRepository);
+                model.Services = _serviceRepository.GetAll().ToList();
+                model.Doctors = _doctorRepository.GetAll().ToList();
+                return View(model);
+            }
         }
 
-        // Не рассмотренные заявки
+        [HttpGet]
+        public IActionResult FormAppointment(AppointmentModel model)
+        {
+            return View(model);
+        }
+
+        // Нерассмотренные заявки
         [HttpGet]
         [Authorize(Roles = "Admin")]
         public IActionResult ApprovalAppointments()

@@ -12,6 +12,7 @@ builder.Services.AddTransient<IBaseRepository<User>, UserRepository>();
 builder.Services.AddTransient<IBaseRepository<Role>, RoleRepository>();
 builder.Services.AddTransient<IBaseRepository<Service>, ServiceRepository>();
 builder.Services.AddTransient<IBaseRepository<Appointment>, AppointmentRepository>();
+builder.Services.AddTransient<IBaseRepository<Doctor>, DoctorRepository>();
 
 builder.Services.AddControllersWithViews();
 

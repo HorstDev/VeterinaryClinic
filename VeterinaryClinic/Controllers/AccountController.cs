@@ -78,9 +78,9 @@ namespace VeterinaryClinic.Controllers
                     //Добавляем в БД
                     await _userRepository.Create(user);
 
-                    await Authenticate(user); // аутентификация
+                    //await Authenticate(user); // аутентификация
 
-                    return RedirectToAction("General", "Home");
+                    return RedirectToAction("Modifications", "Modification");
                 }
                 else
                     ModelState.AddModelError("", "Такой пользователь уже существует!");

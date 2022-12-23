@@ -14,6 +14,7 @@ namespace VeterinaryClinic.Data.Entities
         public string? ShortDescription { get; set; }
         public string? LongDescription { get; set; }
         public int Price { get; set; }
+        public int ReceptionTimeMinutes { get; set; } // время приема в минутах
 
         // Возвращает по 3 услуги в одном элементе List тут много костылей
         public static List<List<Service>> servicesForView(List<Service> allServices)
@@ -25,7 +26,7 @@ namespace VeterinaryClinic.Data.Entities
             {
                 if (threeServices.Count == 3)
                 {
-                    List<Service> toAdd = new List<Service> { threeServices[0], threeServices[1], threeServices[2]};
+                    List<Service> toAdd = new List<Service> { threeServices[0], threeServices[1], threeServices[2] };
                     result.Add(toAdd);
                     threeServices.Clear();
                     i--;

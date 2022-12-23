@@ -28,7 +28,8 @@
              <p>Электронная почта - @Model.Email</p>
              <p>Услуга - @Model.TypeOfService</p>
              <p>Животное - @Model.TypeOfAnimal</p>
-             <p>Время, на которое произведена запись - @Model.DateTime.ToString()</p>
+             <p>Время, на которое произведена запись - @Model.DateTimeStart.ToString()</p>
+             <p>Примечание - @Model.Note</p>
              @if (@Model.StatusCode == AppointmentStatus.Approved)
              {
                 <p>Статус заявки - ОДОБРЕНА</p>

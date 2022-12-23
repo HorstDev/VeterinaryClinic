@@ -1,9 +1,8 @@
 ﻿@using System.Security.Claims
-@using VeterinaryClinic.ViewModels.Service
-@model AppointmentModel
-
+@using VeterinaryClinic.ViewModels
+@model AppointmentFormModel
 @{
-    ViewData["Title"] = "MakeAnAppointment";
+    ViewData["Title"] = "SetDoctorAndDate";
 }
 
 <!doctype html>
@@ -22,58 +21,87 @@
     <!-- Custom styles for this template -->
     <link href="~/css/form-validation.css" rel="stylesheet">
   </head>
+  <form class="needs-validation" asp-action="MakeAnAppointment" asp-controller="Service">
   <body class="bg-light">
     
-<div class="container">
-  <main>
      <div class="container">
-      <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+      @*<header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
       <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
-       <img class ="logo" src="~/img/cat.svg">
+      <img class ="logo" src="~/img/cat.svg">
       </a>
-
       <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-        <li><a href="#" class="nav-link px-2 link-secondary">Когти и Клыки</a></li>
-        <li><a class="nav-link px-2 link-dark" asp-controller="Service" asp-action="MakeAnAppointment">Запись на прием</a></li>
-        <li><a class="nav-link px-2 link-dark" asp-controller="Home" asp-action="Contacts">Контакты</a></li>
+        <li><select class="form-select" id="pets" asp-for="TypeOfAnimal" required>
+                    <option value="">Выберите услугу</option>
+                    <option>Услуга косметология аыаыв</option>
+                    <option>Собака</option>
+                    <option>Птица</option>
+                    <option>Примат</option>
+                    <option>Ящер</option>
+                </select>
+        </li>
+        <li><select class="form-select" id="pets" asp-for="TypeOfAnimal" required>
+                    <option value="">Выберите врача</option>
+                    <option>Горст Валентина Павловна</option>
+                    <option>Горст Валентина Павловна</option>
+                    <option>Горст Валентина Павловна</option>
+                    <option>Горст Валентина Павловна</option>
+                    <option>Горст Валентина Павловна</option>
+                </select>
+        </li>
+        <li><input type="datetime-local" asp-for="DateTime" input type="date" class="form-control" id="data" placeholder="Имя" required></li>
       </ul>
-
-      @if(!User.Identity!.IsAuthenticated) {
-           <div class="col-md-3 text-end">
-                <a class="btn btn-outline-primary me-2" asp-controller="Account" asp-action="Login">Войти</a>
-                <a class="btn btn-primary" asp-controller="Account" asp-action="Register">Регистрация</a>
-           </div>
-      }
-      else {
-          <div class="col-md-3 text-end">
-              @if(User.FindFirst(x => x.Type == ClaimsIdentity.DefaultRoleClaimType)!.Value == "Admin")
-              {
-                  <a class="btn bg-success md-5" asp-controller="Modification" asp-action="Modifications">Админ</a>
-              }
-              else
-              {
-                  <a class="btn bg-success md-5">Мои питомцы</a>
-              }
-              <a class="btn bg-danger md-5" asp-controller="Account" asp-action="Logout">Выйти</a>
-          </div>
-      }
+        <div class="col-md-3 text-end">
+            <button class="btn btn-outline-primary me-2" type="submit">Поиск</button>
+        </div>
       
+    </header>*@
+
+    <header class="d-flex justify-content-center py-3">
+      <ul class="nav nav-pills">
+        <li><select class="form-select" id="pets" asp-for="AppointmentModel.TypeOfService" required>
+                    <option value="">Выберите услугу</option>
+                    @foreach(var item in Model.Services)
+                    {
+                        <option>@item.Name</option>
+                    }
+                </select>
+        </li>
+        <li><select class="form-select" id="pets" asp-for="AppointmentModel.Doctor.FullName" required>
+                    <option value="">Выберите врача</option>
+                    @foreach(var item in Model.Doctors)
+                    {
+                        <option>@item.FullName</option>
+                    }
+                </select>
+        </li>
+        <li><input type="datetime-local" asp-for="AppointmentModel.DateTime" input type="date" class="form-control" id="data" placeholder="Имя" required></li>
+      </ul>
+      <div class="col-md-3 text-end">
+            <button class="btn btn-outline-primary me-2" type="submit">Поиск</button>
+        </div>
     </header>
 	</div>
-	
-    <div class="page-header">
-        <h1>Запись на прием</h1>
-    </div>
-  
 
-    <div class="row g-5">
+
+<div class="container">
+    @if (Model.AppointmentModel.Doctor != null && Model.AppointmentModel.TypeOfService != null && Model.AppointmentModel.DateTime >= DateTime.Now) {
+        @if (!Model.Times.Any())
+        {
+                <div class="page-header">
+                    <h1>К сожалению, врач @Model.AppointmentModel.Doctor.FullName занят в выбранную вами дату</h1>
+                </div>
+        }
+        else
+        {
+            <div class="page-header">
+                    <h1>Заполните форму</h1>
+                </div>
+                 <div class="row g-5">
       <div class="col-md-7 col-lg-8">
-        <form class="needs-validation" asp-action="MakeAnAppointment" asp-controller="Service">
-        <div asp-validation-summary="All" style="font-size:23px; font-family:Impact" class="text-danger"></div>
           <div class="row g-3">
             <div class="col-sm-6">
               <label for="firstName" class="form-label">Фамилия</label>
-              <input type="text" asp-for="Surname" class="form-control" id="firstName" placeholder="Фамилия" value="">
+              <input type="text" asp-for="AppointmentModel.Surname" class="form-control" id="firstName" placeholder="Фамилия">
               <div class="invalid-feedback">
                 Valid first name is required.
               </div>
@@ -81,7 +109,7 @@
 
             <div class="col-sm-6">
               <label for="lastName" class="form-label">Имя</label>
-              <input type="text" asp-for="Name" class="form-control" id="lastName" placeholder="Имя" value="">
+              <input type="text" asp-for="AppointmentModel.Name" class="form-control" id="lastName" placeholder="Имя">
               <div class="invalid-feedback">
                 Valid last name is required.
               </div>
@@ -89,10 +117,13 @@
 
             <div class="col-12">
               <label for="username" class="form-label">Вид питомца</label>
-               <select class="form-select" id="pets" asp-for="TypeOfAnimal"required>
+               <select class="form-select" id="pets" asp-for="AppointmentModel.TypeOfAnimal">
                 <option value="">Выберите</option>
                 <option>Кот</option>
                 <option>Собака</option>
+                <option>Птица</option>
+                <option>Примат</option>
+                <option>Ящер</option>
               </select>
               <div class="invalid-feedback">
                 Please select a valid country.
@@ -101,21 +132,20 @@
 
             <div class="col-12">
               <label for="email" class="form-label">Email</label>
-              <input type="email" asp-for="Email" class="form-control" id="email" placeholder="you@mail.ru">
+              <input type="email" asp-for="AppointmentModel.Email" class="form-control" id="email" placeholder="you@mail.ru">
               <div class="invalid-feedback">
                 Please enter a valid email address for shipping updates.
               </div>
             </div>
 
             <div class="col-12">
-              <label for="address" class="form-label">Вид услугу</label>
-              <select class="form-select" id="ysluga" asp-for="TypeOfService" required>
-                <option value="">Выберите</option>
-                <option>Вакцинация</option>
-                <option>Консультация (стандартная)</option>
-                <option>Консультация с хирургом</option>
-                <option>Консультаци на дому</option>                
-                <option>Груминг</option>
+              <label for="address" class="form-label">Время</label>
+              <select class="form-select" id="ysluga" asp-for="AppointmentModel.TimeInString">
+                <option value="">Выберите время:</option>
+                @foreach(DateTime datetime in Model.Times)
+                {
+                     <option>@datetime.TimeOfDay</option>                   
+                }
             </select>
               <div class="invalid-feedback">
                 Please select a valid country.
@@ -123,44 +153,35 @@
             </div>
 
             <div class="col-12">
-             <label for="Data" class="form-label">Дата и время</label>
-              <input type="datetime-local" asp-for="DateTime" class="form-control" id="data" placeholder="Имя" value="" required>
-              <div class="invalid-feedback">
-                Valid last name is required.
-              </div>
-            </div>
-
-            <div class="col-12">
              <label for="about" class="form-label">Примечание</label>
-             <input type="text" asp-for="Note" class="form-control">
+             <input type="text" asp-for="AppointmentModel.Note" class="form-control">
              <div class="invalid-feedback">
                 Valid last name is required.
               </div>
             </div>
 
-        
 
           <button class="w-100 btn btn-primary btn-lg" type="submit">Записаться</button>
           </div>
-        </form>
       </div>
-    </div>
-  </main>
+                </div>       
+        }
+    }
+    else
+    {
+        <div class="page-header">
+                <h1>Пожалуйста, выберите услугу, врача и дату, чтобы мы могли выбрать время для вас</h1>
+        </div>
+    }
 
-  <footer class="my-5 pt-5 text-muted text-center text-small">
-    <p class="mb-1">&copy; 2017–2022 Company Name</p>
-    <ul class="list-inline">
-      <li class="list-inline-item"><a href="#">Privacy</a></li>
-      <li class="list-inline-item"><a href="#">Terms</a></li>
-      <li class="list-inline-item"><a href="#">Support</a></li>
-    </ul>
-  </footer>
-</div>
+    </div>
+
 
 
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
 
       <script src="form-validation.js"></script>
   </body>
+  </form>
 </html>
 

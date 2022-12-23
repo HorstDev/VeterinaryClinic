@@ -63,7 +63,6 @@
       @if(!User.Identity.IsAuthenticated) {
            <div class="col-md-3 text-end">
                 <a class="btn btn-outline-primary me-2" asp-controller="Account" asp-action="Login">Войти</a>
-                <a class="btn btn-primary" asp-controller="Account" asp-action="Register">Регистрация</a>
            </div>
       }
       else {

@@ -7,6 +7,10 @@
 <div class="list-group w-auto container mt-5">
     <div class="page-header align-content-center">
         <h1>Записи на услуги, требующие одобрения</h1>
+        @if (!Model.Any()) 
+        {
+            <p>Нерассмотренные заявки отсутствуют</p>
+        }
      </div>
     @foreach(Appointment appointment in Model)
     {

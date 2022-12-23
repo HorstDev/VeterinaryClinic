@@ -22,9 +22,11 @@ namespace VeterinaryClinic.Data.Entities
         public string? TypeOfAnimal { get; set; }
         public string? Email { get; set; }
         public string? TypeOfService { get; set; }
-        public DateTime DateTime { get; set; }
+        public DateTime DateTimeStart { get; set; }
+        public DateTime DateTimeEnd { get; set; }
         public string? Note { get; set; }
         public int IdUser { get; set; } // Id пользователя, который оставлял заявку
+        public Doctor Doctor { get; set; }
         public AppointmentStatus StatusCode { get; set; }
 
         public Appointment()
@@ -42,8 +44,8 @@ namespace VeterinaryClinic.Data.Entities
                 $"Имя - {Name}, Фамилия - {Surname}\n" +
                 $"Заявка осуществлялась данный вид услуги: {TypeOfService}\n" +
                 $"Животное, указанное в анкете - {TypeOfAnimal}\n" +
-                $"Дата и время, на которое осуществлялась запись - {DateTime.ToString()}\n" +
-                $"Статус заявки - ОДОБРЕНА, ждем вас в указанную дату - {DateTime.ToString()}";
+                $"Дата и время, на которое осуществлялась запись - {DateTimeStart.ToString()}\n" +
+                $"Статус заявки - ОДОБРЕНА, ждем вас в указанную дату - {DateTimeStart.ToString()}";
             await EMail.SendMessage(Email!, "Ветеринарная клиника Когти и клыки", messageForUser);
         }
         // Отклонить запись
@@ -55,9 +57,10 @@ namespace VeterinaryClinic.Data.Entities
                 $"Имя - {Name}, Фамилия - {Surname}\n" +
                 $"Заявка осуществлялась данный вид услуги: {TypeOfService}\n" +
                 $"Животное, указанное в анкете - {TypeOfAnimal}\n" +
-                $"Дата и время, на которое осуществлялась запись - {DateTime.ToString()}\n" +
+                $"Дата и время, на которое осуществлялась запись - {DateTimeStart.ToString()}\n" +
                 $"Статус заявки - ОТКЛОНЕНА, просим прощения за доставленные неудобства";
             await EMail.SendMessage(Email!, "Ветеринарная клиника Когти и клыки", messageForUser);
         }
+
     }
 }
